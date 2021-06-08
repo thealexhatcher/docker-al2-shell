@@ -3,7 +3,6 @@ ARG TERRAFORM_VERSION=0.15.1
 ARG GH_VERSION=1.9.2
 ARG KUBECTL_VERSION=1.18.9/2020-11-02
 ARG HELM_VERSION=3.5.4
-ARG ARGOCD_VERSION=2.0.2
 ## SYSTEM SETUP
 RUN yum update -y
 RUN yum install -y sudo gcc g++ make git zip unzip tar bzip2 wget jq openssl uuid python3 httpd-tools
