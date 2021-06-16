@@ -5,7 +5,8 @@ ARG KUBECTL_VERSION=1.18.9/2020-11-02
 ARG HELM_VERSION=3.5.4
 ## SYSTEM SETUP
 RUN yum update -y
-RUN yum install -y sudo gcc g++ make git zip unzip tar bzip2 wget jq openssl uuid python3 httpd-tools
+RUN yum install -y sudo ps top
+RUN yum install -y gcc g++ make git zip unzip tar bzip2 wget jq openssl uuid
 ## AWS CLI 
 RUN wget --quiet "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O ~/awscliv2.zip \
     && unzip ~/awscliv2.zip \
@@ -47,4 +48,3 @@ RUN adduser developer
 RUN usermod -aG wheel developer
 RUN echo '%developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER developer
-COPY .aws /home/developer/.aws
